@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fablgen-agent.github.io/private-client-room/sitemap.xml

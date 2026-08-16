@@ -13,6 +13,11 @@ coarse choices, makes no network request, uses no analytics or local storage,
 and prepares (but never sends) a non-sensitive email summary after an explicit
 visitor action.
 
+The public site also includes a canonical URL, sitemap, robots directive,
+truthful Schema.org Service/Offer metadata, and a public project-scoped
+IndexNow ownership key. These are crawl aids only; they do not prove indexing,
+traffic, enquiries, or sales.
+
 ## Pilot offer
 
 - **£199 one time** for the first three accepted deployments
