@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A fixed-scope, customer-owned Matrix and Element deployment for private client conversations.">
+    <title>Private Client Room — customer-owned encrypted collaboration</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top">Private Client Room</a>
+      <nav aria-label="Main navigation">
+        <a href="#scope">Scope</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#checks">Acceptance</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <p class="eyebrow">CUSTOMER-OWNED COLLABORATION</p>
+        <h1>A private client room without another data-hungry workspace.</h1>
+        <p class="lead">A fixed-scope deployment of Element and the open Matrix protocol on infrastructure you control. Invite-only encrypted rooms, a documented handover, and no invented cryptography.</p>
+        <div class="actions">
+          <a class="button" href="mailto:accounts@enby.fish?subject=Private%20Client%20Room%20pilot&amp;body=I%20am%20interested%20in%20the%20%C2%A3199%20pilot.%20My%20team%20size%20is%3A%0AThe%20clients%20or%20guests%20we%20need%20to%20invite%20are%3A%0AWe%20already%20control%20a%20server%20and%20domain%3A%20yes%2Fno%0A%0APlease%20do%20not%20include%20credentials%20or%20private%20data.">Ask about a pilot</a>
+          <span>£199 one time · first 3 accepted deployments</span>
+        </div>
+      </section>
+
+      <section class="facts" aria-label="Service principles">
+        <article><strong>Your server</strong><span>The VM and domain remain in your account.</span></article>
+        <article><strong>Established protocol</strong><span>Matrix and Element, not home-grown encryption.</span></article>
+        <article><strong>Measurable handover</strong><span>Acceptance checks before the invoice is due.</span></article>
+      </section>
+
+      <section class="split" id="scope">
+        <div>
+          <p class="eyebrow">FIXED SCOPE</p>
+          <h2>Enough to put a real client room into service.</h2>
+        </div>
+        <ul class="checklist">
+          <li>One customer-owned Ubuntu server and domain</li>
+          <li>Element plus a Matrix homeserver</li>
+          <li>Invite-only, end-to-end-encrypted rooms by default</li>
+          <li>Up to 10 initial accounts and three rooms</li>
+          <li>TLS, limited federation, and no product analytics</li>
+          <li>Encrypted-backup and routine-update procedures</li>
+          <li>Administrator handover and seven days of deployment-fault fixes</li>
+        </ul>
+      </section>
+
+      <section class="panel" id="privacy">
+        <p class="eyebrow">HONEST PRIVACY BOUNDARY</p>
+        <h2>Private does not mean invisible.</h2>
+        <p>End-to-end encryption is designed to keep room contents from the homeserver, but the server still handles account and delivery metadata. Infrastructure logs may contain IP addresses. Device verification and recovery keys matter; losing recovery material can make encrypted history unrecoverable. These limits are included in the handover instead of buried in marketing copy.</p>
+        <p>The deployment operator does not need message plaintext, recovery keys, or a permanent administrator login. Temporary deployment access is removed at handover.</p>
+      </section>
+
+      <section class="split" id="checks">
+        <div>
+          <p class="eyebrow">ACCEPTANCE</p>
+          <h2>You pay after the agreed checks pass.</h2>
+        </div>
+        <ol class="checklist numbered">
+          <li>Two fresh devices can sign in and verify one another.</li>
+          <li>An invited client can join the intended room, while an uninvited account cannot.</li>
+          <li>Messages and an attachment sync between verified devices.</li>
+          <li>A backup completes and the documented restore preflight succeeds.</li>
+          <li>Temporary operator access is removed and the customer holds the administrator and recovery material.</li>
+        </ol>
+      </section>
+
+      <section class="exclusions">
+        <h2>Not included</h2>
+        <p>Compliance certification, penetration testing, guaranteed anonymity, custom clients, data migration, regulated-data approval, or third-party licence and hosting fees. Scope changes are quoted before work starts.</p>
+      </section>
+
+      <section class="cta">
+        <h2>Start with a two-paragraph fit check.</h2>
+        <p>Tell us your team size, guest pattern, and whether you already control a server and domain. Do not send credentials, messages, customer data, or recovery keys.</p>
+        <a class="button light" href="mailto:accounts@enby.fish?subject=Private%20Client%20Room%20pilot">Email accounts@enby.fish</a>
+      </section>
+    </main>
+
+    <footer>
+      <span>Private Client Room</span>
+      <span>Autonomous AI-assisted development · human approval for human-only agreements</span>
+      <a href="https://github.com/fablgen-agent/private-client-room">Source and security policy</a>
+    </footer>
+  </body>
+</html>
