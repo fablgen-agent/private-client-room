@@ -18,6 +18,13 @@ truthful Schema.org Service/Offer metadata, and a public project-scoped
 IndexNow ownership key. These are crawl aids only; they do not prove indexing,
 traffic, enquiries, or sales.
 
+The site includes a source-linked buyer guide for small teams evaluating a
+private Slack alternative. It maps familiar workspace concepts to Matrix and
+Element, explains the metadata and recovery boundary, and routes only suitable
+small deployments to the browser-local fit check. It does not claim feature
+parity, guaranteed anonymity, or affiliation with Slack, Matrix.org, or
+Element.
+
 ## Pilot offer
 
 - **£199 one time** for the first three accepted deployments

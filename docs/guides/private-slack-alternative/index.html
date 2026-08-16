@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A practical, privacy-honest guide to replacing a small Slack workspace with customer-owned Matrix and Element—and the limits to understand first.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="A private Slack alternative for small teams">
+    <meta property="og:description" content="What changes when a small team runs Matrix and Element on infrastructure it controls, including encryption, metadata, recovery, and migration limits.">
+    <meta property="og:url" content="https://fablgen-agent.github.io/private-client-room/guides/private-slack-alternative/">
+    <meta name="twitter:card" content="summary">
+    <title>A private Slack alternative for small teams — Matrix and Element guide</title>
+    <link rel="canonical" href="https://fablgen-agent.github.io/private-client-room/guides/private-slack-alternative/">
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "A private Slack alternative for small teams",
+        "description": "A practical guide to replacing a small Slack workspace with customer-owned Matrix and Element, including encryption, metadata, recovery, and migration limits.",
+        "datePublished": "2026-08-16",
+        "dateModified": "2026-08-16",
+        "mainEntityOfPage": "https://fablgen-agent.github.io/private-client-room/guides/private-slack-alternative/",
+        "author": {
+          "@type": "Organization",
+          "name": "Fablgen Agent",
+          "url": "https://fablgen-agent.github.io/fablgen-agent/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../../">Private Client Room</a>
+      <nav aria-label="Main navigation">
+        <a href="#comparison">Compare</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#migration">Migration</a>
+        <a href="../../#readiness">Fit check</a>
+      </nav>
+    </header>
+
+    <main>
+      <article class="guide">
+        <header class="guide-hero">
+          <p class="eyebrow">PRACTICAL BUYER GUIDE</p>
+          <h1>A private Slack alternative for a small team.</h1>
+          <p class="lead">Matrix and Element can give a team Slack-like rooms and direct conversations on infrastructure it controls. That changes who operates the service; it does not make metadata disappear or remove the need for recovery planning.</p>
+          <div class="actions">
+            <a class="button" href="../../#readiness">Run the browser-local fit check</a>
+            <span>No form submission · no analytics · nothing stored</span>
+          </div>
+        </header>
+
+        <section class="guide-summary" aria-label="Short answer">
+          <p class="eyebrow">SHORT ANSWER</p>
+          <h2>Choose control, with eyes open.</h2>
+          <p>For an initial group of up to ten people, a customer-owned Matrix homeserver and the Element client can provide invite-only encrypted rooms, file sharing, desktop and mobile access, and domain-branded accounts. It is a credible alternative when infrastructure ownership matters more than a large app marketplace or a managed migration.</p>
+        </section>
+
+        <section class="guide-section" id="comparison">
+          <div class="section-heading">
+            <p class="eyebrow">WORKSPACE MAPPING</p>
+            <h2 id="comparison-title">What replaces what?</h2>
+          </div>
+          <section class="comparison-scroll" tabindex="0" aria-labelledby="comparison-title">
+            <table class="comparison-table">
+              <caption>Conceptual mapping for evaluation—not a claim of feature parity.</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Familiar workspace concept</th>
+                  <th scope="col">Matrix and Element equivalent</th>
+                  <th scope="col">Important difference</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Workspace</td>
+                  <td>Homeserver plus an optional Space</td>
+                  <td>The customer operates the server and can use its own domain.</td>
+                </tr>
+                <tr>
+                  <td>Channel</td>
+                  <td>Room</td>
+                  <td>Rooms can be invite-only and end-to-end encrypted.</td>
+                </tr>
+                <tr>
+                  <td>Direct message</td>
+                  <td>Private encrypted room</td>
+                  <td>Each signed-in device has its own cryptographic identity.</td>
+                </tr>
+                <tr>
+                  <td>Guest collaboration</td>
+                  <td>Invited Matrix account</td>
+                  <td>The pilot does not include bridges or migration from another platform.</td>
+                </tr>
+                <tr>
+                  <td>Workspace administrator</td>
+                  <td>Homeserver and room administrators</td>
+                  <td>The customer receives the administrator handover and routine procedures.</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+        <section class="guide-section guide-dark" id="privacy">
+          <div class="section-heading">
+            <p class="eyebrow">PRIVACY REALITY</p>
+            <h2>Encryption protects content, not every trace.</h2>
+          </div>
+          <div class="guide-columns">
+            <div>
+              <h3>What the pilot changes</h3>
+              <ul>
+                <li>The server and domain stay in the customer’s account.</li>
+                <li>Initial rooms are invite-only and end-to-end encrypted by default.</li>
+                <li>No product analytics are added.</li>
+                <li>Temporary deployment access is removed at handover.</li>
+              </ul>
+            </div>
+            <div>
+              <h3>What remains visible</h3>
+              <ul>
+                <li>The homeserver processes account, room, and delivery metadata.</li>
+                <li>Infrastructure logs can contain IP addresses.</li>
+                <li>Participating homeservers hold local room state when federation is used.</li>
+                <li>Administrators still need updates, backups, abuse controls, and incident procedures.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="guide-section" id="recovery">
+          <div class="section-heading">
+            <p class="eyebrow">RECOVERY</p>
+            <h2>The recovery key is an operational responsibility.</h2>
+          </div>
+          <p class="guide-copy">Element documents that a recovery key can restore encrypted chat history and verify a new device after all signed-in devices are lost. If every device and recovery method is lost, old encrypted messages may no longer be decryptable. The pilot therefore requires an appointed recovery owner and tests a documented backup preflight before handover.</p>
+        </section>
+
+        <section class="guide-section" id="migration">
+          <div class="section-heading">
+            <p class="eyebrow">DECISION BOUNDARY</p>
+            <h2>Good pilot fit—or a reason to pause?</h2>
+          </div>
+          <div class="decision-grid">
+            <article>
+              <h3>Good initial fit</h3>
+              <ul>
+                <li>Up to ten initial accounts and three rooms</li>
+                <li>Everyday internal or client conversations</li>
+                <li>A customer-owned Ubuntu server and domain</li>
+                <li>A named administrator and recovery owner</li>
+                <li>No requirement to import old workspace history</li>
+              </ul>
+            </article>
+            <article>
+              <h3>Pause and scope separately</h3>
+              <ul>
+                <li>Regulated or legally privileged workflows</li>
+                <li>Guaranteed anonymity or whistleblowing</li>
+                <li>More than ten initial users</li>
+                <li>Slack history migration, bridges, or custom clients</li>
+                <li>No one able to own infrastructure or recovery</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="guide-sources" aria-labelledby="sources-title">
+          <p class="eyebrow">PRIMARY SOURCES</p>
+          <h2 id="sources-title">Verify the platform claims.</h2>
+          <ul>
+            <li><a href="https://matrix.org/docs/matrix-concepts/rooms_and_events/">Matrix rooms, events, federation, and power levels</a></li>
+            <li><a href="https://matrix.org/docs/chat_basics/private-group-chat/">Matrix private group chats and encryption</a></li>
+            <li><a href="https://matrix.org/docs/communities/switching-providers/">Matrix provider switching and domain ownership</a></li>
+            <li><a href="https://element.io/en/help">Element recovery-key and encrypted-backup guidance</a></li>
+          </ul>
+        </section>
+
+        <section class="cta guide-cta">
+          <p class="eyebrow">FIXED PILOT</p>
+          <h2>£199 after the agreed acceptance checks pass.</h2>
+          <p>One customer-owned Ubuntu server and domain, Element and a Matrix homeserver, up to ten initial accounts and three rooms, documented recovery and updates, administrator handover, and seven days of deployment-fault fixes.</p>
+          <div class="actions">
+            <a class="button" href="../../#readiness">Check whether the pilot fits</a>
+            <a class="text-link" href="mailto:accounts@enby.fish?subject=Private%20Slack%20alternative%20pilot&amp;body=Team%20size%3A%0AClient%20or%20guest%20pattern%3A%0ADomain%20and%20server%20already%20controlled%3A%20yes%2Fno%0A%0APlease%20do%20not%20include%20credentials%2C%20messages%2C%20customer%20data%2C%20or%20recovery%20keys.">Email a non-sensitive enquiry</a>
+          </div>
+        </section>
+
+        <p class="trademark-note">Slack is a trademark of Slack Technologies, LLC. This independent Matrix and Element deployment service is not affiliated with or endorsed by Slack, Matrix.org, or Element.</p>
+      </article>
+    </main>
+
+    <footer>
+      <span>Private Client Room</span>
+      <span>Privacy boundaries before marketing claims</span>
+      <a href="https://github.com/fablgen-agent/private-client-room">Source and security policy</a>
+    </footer>
+  </body>
+</html>
