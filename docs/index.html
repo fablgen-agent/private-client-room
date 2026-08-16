@@ -7,12 +7,14 @@
     <title>Private Client Room — customer-owned encrypted collaboration</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
+    <script src="readiness.js" defer></script>
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="#top">Private Client Room</a>
       <nav aria-label="Main navigation">
         <a href="#scope">Scope</a>
+        <a href="#readiness">Fit check</a>
         <a href="#privacy">Privacy</a>
         <a href="#checks">Acceptance</a>
       </nav>
@@ -33,6 +35,93 @@
         <article><strong>Your server</strong><span>The VM and domain remain in your account.</span></article>
         <article><strong>Established protocol</strong><span>Matrix and Element, not home-grown encryption.</span></article>
         <article><strong>Measurable handover</strong><span>Acceptance checks before the invoice is due.</span></article>
+      </section>
+
+      <section class="readiness" id="readiness">
+        <div class="readiness-intro">
+          <p class="eyebrow">TWO-MINUTE FIT CHECK</p>
+          <h2>Find out whether the fixed pilot fits.</h2>
+          <p>Choose broad, non-sensitive answers. This check runs entirely in your browser: it makes no network request, uses no analytics, and stores nothing.</p>
+        </div>
+
+        <form class="readiness-form" id="readiness-form">
+          <div class="form-grid">
+            <label>
+              Initial team size
+              <select name="team" required>
+                <option value="">Choose one</option>
+                <option value="1-10">1–10 people</option>
+                <option value="11-50">11–50 people</option>
+                <option value="51-plus">More than 50 people</option>
+              </select>
+            </label>
+
+            <label>
+              Main use
+              <select name="use" required>
+                <option value="">Choose one</option>
+                <option value="client">Everyday client or team conversations</option>
+                <option value="community">A private community</option>
+                <option value="regulated">Regulated or legally privileged data</option>
+                <option value="anonymity">Guaranteed anonymity or whistleblowing</option>
+              </select>
+            </label>
+
+            <label>
+              Domain control
+              <select name="domain" required>
+                <option value="">Choose one</option>
+                <option value="yes">We control a domain and its DNS</option>
+                <option value="planned">We can arrange this</option>
+                <option value="no">Not currently</option>
+              </select>
+            </label>
+
+            <label>
+              Server ownership
+              <select name="server" required>
+                <option value="">Choose one</option>
+                <option value="yes">We control an Ubuntu server</option>
+                <option value="planned">We can arrange one</option>
+                <option value="no">Not currently</option>
+              </select>
+            </label>
+
+            <label>
+              Recovery responsibility
+              <select name="recovery" required>
+                <option value="">Choose one</option>
+                <option value="yes">We can appoint a recovery-key owner</option>
+                <option value="unsure">We need guidance</option>
+                <option value="no">Nobody can own recovery</option>
+              </select>
+            </label>
+
+            <label>
+              External guests
+              <select name="guests" required>
+                <option value="">Choose one</option>
+                <option value="yes">Yes, invited clients or guests</option>
+                <option value="no">No, internal team only</option>
+                <option value="unsure">Not decided</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="form-actions">
+            <button class="button" type="submit">Check pilot fit</button>
+            <button class="text-button" type="reset">Clear answers</button>
+          </div>
+        </form>
+
+        <section class="readiness-result" id="readiness-result" aria-live="polite" hidden>
+          <p class="result-label" id="result-label"></p>
+          <h3 id="result-title"></h3>
+          <p id="result-summary"></p>
+          <ul id="result-actions"></ul>
+          <a class="button" id="result-email" href="mailto:accounts@enby.fish">Prepare a fit-check email</a>
+          <p class="result-note">The email opens in your mail app and includes only the six choices above. Review it before sending; do not add credentials, messages, customer data, or recovery keys.</p>
+        </section>
       </section>
 
       <section class="split" id="scope">

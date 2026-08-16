@@ -8,6 +8,11 @@ The service deploys the open Matrix protocol and Element client on
 customer-controlled infrastructure. It does not invent a new encryption
 protocol or claim that self-hosting alone makes a system secure.
 
+The live page includes a browser-local readiness check. It accepts only six
+coarse choices, makes no network request, uses no analytics or local storage,
+and prepares (but never sends) a non-sensitive email summary after an explicit
+visitor action.
+
 ## Pilot offer
 
 - **£199 one time** for the first three accepted deployments
