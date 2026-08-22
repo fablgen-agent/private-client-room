@@ -18,6 +18,12 @@ truthful Schema.org Service/Offer metadata, and a public project-scoped
 IndexNow ownership key. These are crawl aids only; they do not prove indexing,
 traffic, enquiries, or sales.
 
+The repository now includes an [executable delivery kit](delivery/README.md).
+It locks the reviewed Matrix Docker Ansible Deploy commit, prepares a new
+mode-700 customer workspace without printing generated secrets, applies the
+pilot's explicit private defaults, verifies public endpoints without logging
+in, and provides a customer-controlled acceptance and handover record.
+
 The site includes a source-linked buyer guide for small teams evaluating a
 private Slack alternative. It maps familiar workspace concepts to Matrix and
 Element, explains the metadata and recovery boundary, and routes only suitable
@@ -32,6 +38,7 @@ Element.
 - Element plus a Matrix homeserver, configured for invite-only encrypted rooms
 - up to 10 initial accounts and three initial rooms
 - TLS, encrypted backup procedure, update procedure, and administrator handover
+- public registration, public room discovery, telemetry, and federation disabled by default
 - acceptance checks and seven days of deployment-fault fixes
 - invoiced only after the written acceptance checks pass
 
@@ -42,7 +49,7 @@ anonymity.
 
 ## Privacy boundary
 
-The default design uses end-to-end-encrypted rooms, limits federation, avoids
+The default design uses end-to-end-encrypted rooms, disables federation, avoids
 analytics, and keeps the server and domain in the customer's account. A Matrix
 homeserver still processes account and delivery metadata, IP addresses may
 appear in infrastructure logs, and losing encryption recovery material can
@@ -64,3 +71,5 @@ natural person.
 - [Element plans and platform description](https://element.io/pricing)
 - [Matrix specification](https://spec.matrix.org/)
 - [Matrix security disclosure policy](https://matrix.org/security-disclosure-policy/)
+- [Synapse installation documentation](https://element-hq.github.io/synapse/latest/setup/installation.html)
+- [Audited deployment upstream](https://github.com/spantaleev/matrix-docker-ansible-deploy)
