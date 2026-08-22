@@ -71,4 +71,3 @@ printf '%s\n' \
   '- complete an encrypted backup and restore preflight' \
   '- confirm public registration, public directory, telemetry, and federation are disabled' \
   '- remove temporary operator access and transfer administrator/recovery material'
-

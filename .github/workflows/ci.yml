@@ -17,4 +17,3 @@ jobs:
         run: shellcheck delivery/*.sh test/*.sh
       - name: Test locked workspace preparation
         run: bash test/delivery-kit.test.sh
-

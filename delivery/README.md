@@ -47,4 +47,3 @@ their respective licences and trademarks. This service is independent and is
 not Element support, a security audit, a compliance certification, or an
 anonymity guarantee. Commercial or regulated deployments may require different
 software, support, licensing, and professional review outside this pilot.
-

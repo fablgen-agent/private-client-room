@@ -58,4 +58,3 @@ authorization, backup recovery, federation policy, or operator removal.
 Payment becomes due only after the written acceptance checks pass. This record
 is operational evidence, not a penetration test, compliance certification,
 anonymity guarantee, or legal opinion.
-
