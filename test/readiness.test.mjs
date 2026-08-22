@@ -4,7 +4,7 @@ import test from 'node:test';
 import { classify } from '../docs/readiness-logic.mjs';
 
 const base = {
-  team: '1-10',
+  team: '1-15',
   use: 'client',
   workflow: 'rooms',
   domain: 'yes',
@@ -15,6 +15,10 @@ const base = {
 
 test('ordinary small-team conversations fit the fixed pilot', () => {
   assert.equal(classify(base).tone, 'fit');
+});
+
+test('the published fifteen-account boundary fits the fixed pilot', () => {
+  assert.equal(classify({ ...base, team: '1-15' }).tone, 'fit');
 });
 
 test('thread-dependent teams must validate the workflow first', () => {
@@ -42,7 +46,9 @@ test('regulated and anonymity requirements remain outside the pilot', () => {
 });
 
 test('larger initial groups and missing prerequisites require preparation', () => {
-  assert.equal(classify({ ...base, team: '11-50' }).tone, 'prepare');
+  const expanded = classify({ ...base, team: '16-50' });
+  assert.equal(expanded.tone, 'prepare');
+  assert.ok(expanded.actions.some((action) => action.includes('fifteen people')));
   assert.equal(classify({ ...base, domain: 'planned' }).tone, 'prepare');
   assert.equal(classify({ ...base, recovery: 'unsure' }).tone, 'prepare');
 });

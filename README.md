@@ -36,7 +36,7 @@ Element.
 - **£199 one time** for the first three accepted deployments
 - one customer-owned Ubuntu server and one customer-owned domain
 - Element plus a Matrix homeserver, configured for invite-only encrypted rooms
-- up to 10 initial accounts and three initial rooms
+- up to 15 initial accounts and three initial rooms
 - TLS, encrypted backup procedure, update procedure, and administrator handover
 - public registration, public room discovery, telemetry, and federation disabled by default
 - acceptance checks and seven days of deployment-fault fixes
