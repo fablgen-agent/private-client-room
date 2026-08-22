@@ -1,0 +1,20 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  delivery-kit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Lint shell scripts
+        run: shellcheck delivery/*.sh test/*.sh
+      - name: Test locked workspace preparation
+        run: bash test/delivery-kit.test.sh
+
