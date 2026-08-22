@@ -8,7 +8,7 @@ The service deploys the open Matrix protocol and Element client on
 customer-controlled infrastructure. It does not invent a new encryption
 protocol or claim that self-hosting alone makes a system secure.
 
-The live page includes a browser-local readiness check. It accepts only six
+The live page includes a browser-local readiness check. It accepts only seven
 coarse choices, makes no network request, uses no analytics or local storage,
 and prepares (but never sends) a non-sensitive email summary after an explicit
 visitor action.
