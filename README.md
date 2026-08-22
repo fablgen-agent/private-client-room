@@ -45,7 +45,8 @@ Element.
 The customer pays their infrastructure, domain, mail, and any third-party
 licence costs directly. The service excludes compliance certification,
 penetration testing, custom mobile apps, data migration, and guaranteed
-anonymity.
+anonymity. It also excludes ticket or resolved-topic workflows, calls,
+conferencing, and screen sharing.
 
 ## Privacy boundary
 
