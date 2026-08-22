@@ -1,7 +1,7 @@
 export const labels = {
   team: {
-    '1-10': '1–10 people',
-    '11-50': '11–50 people',
+    '1-15': '1–15 people',
+    '16-50': '16–50 people',
     '51-plus': 'More than 50 people',
   },
   use: {
@@ -78,7 +78,7 @@ export function classify(values) {
       tone: 'outside',
       label: 'OUTSIDE THE PILOT',
       title: 'The initial deployment is too large for this offer.',
-      summary: 'The £199 pilot is limited to ten initial accounts and three rooms.',
+      summary: 'The £199 pilot is limited to fifteen initial accounts and three rooms.',
       actions: [
         'Define a smaller pilot group before requesting a fit check.',
         'Treat a wider rollout as separately scoped work, not as part of this price.',
@@ -88,7 +88,7 @@ export function classify(values) {
 
   const missingInfrastructure = values.domain !== 'yes' || values.server !== 'yes';
   const recoveryNeedsWork = values.recovery !== 'yes';
-  const expandedTeam = values.team === '11-50';
+  const expandedTeam = values.team === '16-50';
   const threadsNeedValidation = values.workflow === 'threads';
 
   if (missingInfrastructure || recoveryNeedsWork || expandedTeam || threadsNeedValidation) {
@@ -96,7 +96,7 @@ export function classify(values) {
     if (values.domain !== 'yes') actions.push('Arrange a customer-owned domain with editable DNS.');
     if (values.server !== 'yes') actions.push('Arrange a customer-owned Ubuntu server; hosting is paid directly by you.');
     if (recoveryNeedsWork) actions.push('Appoint a person responsible for recovery material before handover.');
-    if (expandedTeam) actions.push('Choose up to ten people for the initial pilot.');
+    if (expandedTeam) actions.push('Choose up to fifteen people for the initial pilot.');
     if (threadsNeedValidation) {
       actions.push('Test Element threads on every required client before agreeing scope.');
       actions.push('Confirm that no ticket state or resolved-topic workflow is required.');
