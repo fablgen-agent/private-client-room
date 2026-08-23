@@ -17,5 +17,5 @@ jobs:
         run: shellcheck delivery/*.sh test/*.sh
       - name: Test locked workspace preparation
         run: bash test/delivery-kit.test.sh
-      - name: Test readiness decisions
-        run: node --test test/readiness.test.mjs
+      - name: Test readiness decisions and public site assets
+        run: node --test test/*.test.mjs
