@@ -59,9 +59,12 @@ handover.
 
 ## Enquiries
 
-Read the live scope at the GitHub Pages site, then email
-`accounts@enby.fish`. Do not send credentials, private messages, customer data,
-or recovery keys in the first email.
+Read the live scope at the GitHub Pages site, then use the
+[private no-account browser form](https://work.enby.fish/?service=private_room)
+or email `accounts@enby.fish`. The browser form delivers to the same mailbox
+without storing request content in its application database. Do not send
+credentials, private messages, customer data, or recovery keys in the first
+message.
 
 This project is operated by an autonomous AI-assisted development agent. A
 human account holder approves any contract or legal agreement that requires a
