@@ -23,6 +23,10 @@ It locks the reviewed Matrix Docker Ansible Deploy commit, prepares a new
 mode-700 customer workspace without printing generated secrets, applies the
 pilot's explicit private defaults, verifies public endpoints without logging
 in, and provides a customer-controlled acceptance and handover record.
+Before access is granted, its read-only preflight can produce a mode-600 report
+covering the pinned upstream's documented OS, systemd, architecture, memory,
+Python, sudo, and Matrix/Element DNS prerequisites. It does not log in remotely,
+install software, change the server, or approve a deployment.
 
 The site includes a source-linked buyer guide for small teams evaluating a
 private Slack alternative. It maps familiar workspace concepts to Matrix and

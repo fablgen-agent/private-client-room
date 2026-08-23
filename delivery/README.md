@@ -21,6 +21,21 @@ ticket, place it in a shared chat, or leave it in a broadly synced directory.
 Review the upstream changelog, migration acknowledgement, DNS requirements,
 licences, and customer-specific backup destination before installation.
 
+Before granting server access or preparing an inventory, the customer can run
+the read-only preflight on the intended Ubuntu host. It checks only prerequisites
+documented by the pinned upstream—systemd, architecture, memory, Python, sudo,
+and public Matrix/Element DNS—and marks permitted alternatives for review rather
+than silently treating them as supported by the fixed pilot.
+
+```sh
+delivery/preflight.sh example.com 203.0.113.10 preflight.md
+```
+
+The optional report is created mode 600 and refuses to overwrite an existing
+file. It contains the supplied domain and address, so keep it in the private
+customer workspace. The check does not log in remotely, install anything,
+change DNS or firewall rules, test encryption, or approve a deployment.
+
 After deployment, `check-public.sh` verifies the unauthenticated HTTPS client
 API, Matrix client discovery, and Element Web homeserver mapping. It deliberately
 does not log in or inspect rooms.
