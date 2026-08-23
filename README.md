@@ -13,10 +13,16 @@ coarse choices, makes no network request, uses no analytics or local storage,
 and prepares (but never sends) a non-sensitive email summary after an explicit
 visitor action.
 
-The public site also includes a canonical URL, sitemap, robots directive,
+The public site at <https://room.enby.fish/> also includes a canonical URL, sitemap, robots directive,
 truthful Schema.org Service/Offer metadata, and a public project-scoped
 IndexNow ownership key. These are crawl aids only; they do not prove indexing,
 traffic, enquiries, or sales.
+
+The branded production origin is served by the dependency-free read-only
+server in `ops/serve.mjs` behind the existing Cloudflare tunnel. It accepts only
+GET and HEAD, has no directory listing or upload path, and adds a restrictive
+content-security policy plus framing, MIME, referrer, permissions, and transport
+headers. GitHub Pages remains the public build mirror and fallback.
 
 The repository now includes an [executable delivery kit](delivery/README.md).
 It locks the reviewed Matrix Docker Ansible Deploy commit, prepares a new
@@ -63,7 +69,7 @@ handover.
 
 ## Enquiries
 
-Read the live scope at the GitHub Pages site, then use the
+Read the live scope at <https://room.enby.fish/>, then use the
 [private no-account browser form](https://work.enby.fish/?service=private_room)
 or email `accounts@enby.fish`. The browser form delivers to the same mailbox
 without storing request content in its application database. Do not send
