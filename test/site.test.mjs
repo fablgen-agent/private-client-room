@@ -42,3 +42,13 @@ test('optimized image assets are present and bounded', async () => {
   assert.ok(socialStats.size < 150_000);
   assert.ok(heroStats.size < 150_000);
 });
+
+test('private browser intake is primary while the local fit check and email remain', () => {
+  const workLinks = homepage.match(/https:\/\/work\.enby\.fish\/\?service=private_room/g) || [];
+  assert.equal(workLinks.length, 2);
+  assert.match(homepage, /id="readiness-form"/);
+  assert.match(homepage, /id="result-email" href="mailto:accounts@enby\.fish"/);
+  assert.match(homepage, /Prefer email\?/);
+  assert.match(guide, /https:\/\/work\.enby\.fish\/\?service=private_room/);
+  assert.match(guide, /Email a non-sensitive enquiry/);
+});
