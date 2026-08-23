@@ -1,0 +1,27 @@
+[Unit]
+Description=Private Client Room static origin
+After=network.target
+
+[Service]
+Type=simple
+User=admin
+Group=admin
+UMask=0077
+WorkingDirectory=/home/admin/private-client-room
+Environment=PCR_PORT=8766
+Environment=PCR_PUBLIC_ROOT=/home/admin/private-client-room/docs
+ExecStart=/opt/node-v24.19.0/bin/node /home/admin/private-client-room/ops/serve.mjs
+Restart=on-failure
+RestartSec=5s
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictAddressFamilies=AF_INET AF_INET6
+ReadOnlyPaths=/home/admin/private-client-room/docs
+
+[Install]
+WantedBy=multi-user.target

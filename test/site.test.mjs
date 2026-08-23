@@ -7,9 +7,21 @@ const guide = await readFile(
   new URL('../docs/guides/private-slack-alternative/index.html', import.meta.url),
   'utf8',
 );
+const sitemap = await readFile(new URL('../docs/sitemap.xml', import.meta.url), 'utf8');
+const robots = await readFile(new URL('../docs/robots.txt', import.meta.url), 'utf8');
 
 const socialImage = new URL('../docs/assets/private-client-room-social.jpg', import.meta.url);
 const heroImage = new URL('../docs/assets/private-client-room-hero.webp', import.meta.url);
+
+test('publishes one branded canonical origin while retaining GitHub Pages as a mirror', () => {
+  for (const page of [homepage, guide]) {
+    assert.match(page, /https:\/\/room\.enby\.fish\//);
+    assert.doesNotMatch(page, /fablgen-agent\.github\.io\/private-client-room/);
+  }
+  assert.doesNotMatch(sitemap, /fablgen-agent\.github\.io\/private-client-room/);
+  assert.match(sitemap, /<loc>https:\/\/room\.enby\.fish\//);
+  assert.match(robots, /Sitemap: https:\/\/room\.enby\.fish\/sitemap\.xml/);
+});
 
 test('home and guide publish complete large-image social metadata', () => {
   for (const page of [homepage, guide]) {
