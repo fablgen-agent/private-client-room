@@ -52,3 +52,9 @@ test('private browser intake is primary while the local fit check and email rema
   assert.match(guide, /https:\/\/work\.enby\.fish\/\?service=private_room/);
   assert.match(guide, /Email a non-sensitive enquiry/);
 });
+
+test('delivery copy exposes the read-only preflight without overstating it', () => {
+  assert.match(homepage, /READ-ONLY PREFLIGHT/);
+  assert.match(homepage, /delivery\/preflight\.sh/);
+  assert.match(homepage, /does not log in remotely or change the server/);
+});
